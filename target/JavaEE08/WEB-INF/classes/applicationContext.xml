@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描包-->
+    <context:component-scan base-package="example.jdbc" />
+    <context:component-scan base-package="example.model" />
+    <context:component-scan base-package="example.controller" />
+    <!--Ioc：控制反转，利用反射原理，创建Student的实例对象-->
+
+
+    <bean id="student" class="example.model.Student" scope="singleton">
+        <property name="id">
+            <value>19940068</value>
+        </property>
+        <property name="name">
+            <value>刘美娇</value>
+        </property>
+    </bean>
+
+    <bean id="homework" class="example.model.Homework">
+        <property name="id">
+            <value>6 </value>
+        </property>
+        <property name="title">
+            <value>javaee06</value>
+        </property>
+    </bean>
+
+    <bean id="studenthomework" class="example.model.StudentHomework">
+        <property name="studentId">
+            <value>19940068 </value>
+        </property>
+        <property name="homeworkId">
+            <value>6 </value>
+        </property>
+        <property name="homeworkTitle">
+            <value>javaee06</value>
+        </property>
+        <property name="homeworkContent">
+            <value>https://github.com/</value>
+        </property>
+    </bean>
+
+
+</beans>
